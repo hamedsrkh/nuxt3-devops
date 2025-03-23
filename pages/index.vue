@@ -12,18 +12,8 @@
       </div>
 
       <div v-else class="space-y-6">
-        <NuxtLink
-            v-for="post in posts"
-            :key="post.id"
-            :to="`/post/${post.id}`"
-            class="block bg-white shadow-md rounded-2xl p-6 hover:shadow-lg transition"
-        >
-          <h2 class="text-2xl font-semibold text-gray-800 mb-2">
-            {{ post.title }}
-          </h2>
-          <p class="text-gray-600 leading-relaxed line-clamp-3">
-            {{ post.body }}
-          </p>
+        <NuxtLink class="block" v-for="post in posts" :key="post.id" :to="`/post/${post.id}`">
+          <Post :post/>
         </NuxtLink>
       </div>
     </div>
@@ -31,5 +21,5 @@
 </template>
 
 <script setup lang="ts">
-const { data: posts, status } = await useFetch('https://jsonplaceholder.typicode.com/posts')
+const {data: posts, status} = await useFetch('https://jsonplaceholder.typicode.com/posts')
 </script>

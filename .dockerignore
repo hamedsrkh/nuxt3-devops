@@ -1,0 +1,32 @@
+# Node junk
+node_modules
+npm-debug.log
+pnpm-debug.log
+yarn-error.log
+
+# Nuxt build artifacts
+.nuxt
+.output
+dist
+
+# Env files (let Docker handle them securely)
+.env*
+!.env.production
+
+# OS files
+.DS_Store
+
+# Git
+.git
+.gitignore
+
+# Editor configs
+.vscode
+.idea
+*.swp
+
+# Docker itself
+Dockerfile
+docker-compose.yml
+docker-compose.*.yml
+docker/
